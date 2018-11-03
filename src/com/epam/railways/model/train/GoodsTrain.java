@@ -1,5 +1,6 @@
 package com.epam.railways.model.train;
 
+import com.epam.railways.model.locomotive.GoodsLocomotive;
 import com.epam.railways.model.train.factory.TrainFactory;
 
 public class GoodsTrain extends Train{
@@ -18,4 +19,9 @@ public class GoodsTrain extends Train{
     void addLocomotive() {
         setLocomotive(trainFactory.createLocomotive());
     }
+
+    void addLocomotive(GoodsLocomotive locomotive) {
+
+    }
+
 }

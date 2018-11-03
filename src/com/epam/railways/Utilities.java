@@ -1,4 +1,4 @@
-package com.epam.apartment;
+package com.epam.railways;
 
 import com.epam.apartment.model.Direction;
 import com.epam.apartment.model.Room;
@@ -7,14 +7,6 @@ import static com.epam.apartment.model.Direction.NORTH;
 import static com.epam.apartment.model.Direction.SOUTH;
 
 public class Utilities {
-
-    public static float getWidthFromRoomByDirection(Room room, Direction direction) {
-        if (direction == NORTH || direction == SOUTH) {
-            return room.getNorthAndSouthWidth();
-        } else {
-            return room.getEastAndWestWidth();
-        }
-    }
 
     public static void checkNull(Object obj, String message) {
         if (obj == null) {

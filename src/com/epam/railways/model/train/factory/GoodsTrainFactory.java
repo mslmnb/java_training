@@ -12,6 +12,11 @@ public class GoodsTrainFactory implements TrainFactory {
     }
 
     @Override
+    public Locomotive addLocomotive(Locomotive locomotive) {
+        return locomotive;
+    }
+
+    @Override
     public Wagon createWagon() {
         // выдавать грузовые вагоны случайным образом
         return new CoveredWagon();

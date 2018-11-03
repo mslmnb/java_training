@@ -13,7 +13,7 @@ public class Apartment extends BaseEntity {
     private List<Room> rooms = new ArrayList<>();
 
     public Apartment(float height) {
-        checkIsPositive(height, "Значение height должно быть положительно");
+        checkPositive(height, "Значение height должно быть положительно");
         this.height = height;
     }
 

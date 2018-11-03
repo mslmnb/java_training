@@ -1,7 +1,17 @@
 package com.epam.railways.model.locomotive;
 
-/**
- * Created by Mussulmanbekova_GE on 02.11.2018.
- */
 public class PassangerLocomotive extends Locomotive {
+
+    public PassangerLocomotive() {
+    }
+
+    public PassangerLocomotive(float power) {
+        super(power);
+    }
+
+    @Override
+    public String toString() {
+        return "PassangerLocomotive{" + super.toString();
+    }
+
 }

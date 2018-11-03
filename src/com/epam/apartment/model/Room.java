@@ -3,7 +3,7 @@ package com.epam.apartment.model;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static com.epam.apartment.Utilities.checkIsPositive;
+import static com.epam.apartment.Utilities.checkPositive;
 import static com.epam.apartment.Utilities.checkNull;
 
 public class Room extends BaseEntity {
@@ -14,8 +14,8 @@ public class Room extends BaseEntity {
 
     Room(Apartment apartment, float northAndSouthWidth, float eastAndWestWidth) {
         checkNull(apartment, "Неопределен объект apartment.");
-        checkIsPositive(northAndSouthWidth, "Значение northAndSouthWidth должно быть положительно");
-        checkIsPositive(eastAndWestWidth, "Значение eastAndWestWidth должно быть положительно");
+        checkPositive(northAndSouthWidth, "Значение northAndSouthWidth должно быть положительно");
+        checkPositive(eastAndWestWidth, "Значение eastAndWestWidth должно быть положительно");
 
         this.northAndSouthWidth = northAndSouthWidth;
         this.eastAndWestWidth = eastAndWestWidth;

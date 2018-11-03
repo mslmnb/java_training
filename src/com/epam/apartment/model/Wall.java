@@ -2,7 +2,7 @@ package com.epam.apartment.model;
 
 import com.epam.apartment.Utilities;
 
-import static com.epam.apartment.Utilities.checkIsPositive;
+import static com.epam.apartment.Utilities.checkPositive;
 import static com.epam.apartment.Utilities.checkNull;
 
 import java.util.ArrayList;
@@ -25,8 +25,8 @@ public class Wall extends BaseEntity {
     }
 
     void createDoor(float height, float width) {
-        checkIsPositive(height, "Значение height должно быть положительно");
-        checkIsPositive(width, "Значение width должно быть положительно");
+        checkPositive(height, "Значение height должно быть положительно");
+        checkPositive(width, "Значение width должно быть положительно");
         if (height >= getHeight()) {
             throw new IllegalArgumentException("Недопустимое значение height");
         }
@@ -38,8 +38,8 @@ public class Wall extends BaseEntity {
     }
 
     void createWindow(float height, float width) {
-        checkIsPositive(height, "Значение height должно быть положительно");
-        checkIsPositive(width, "Значение width должно быть положительно");
+        checkPositive(height, "Значение height должно быть положительно");
+        checkPositive(width, "Значение width должно быть положительно");
         if (height >= getHeight()) {
             throw new IllegalArgumentException("Недопустимое значение height");
         }

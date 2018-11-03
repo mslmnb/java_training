@@ -19,4 +19,9 @@ public class PassengerTrainFactory implements TrainFactory {
         // выдавать пассажирские вагоны случайным образом
         return new FirstClassWagon();
     }
+
+    @Override
+    public Locomotive addLocomotive(Locomotive locomotive) {
+        return null;
+    }
 }

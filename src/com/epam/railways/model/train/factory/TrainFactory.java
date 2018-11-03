@@ -7,5 +7,6 @@ import java.util.List;
 
 public interface TrainFactory {
     public Locomotive createLocomotive();
+    public Locomotive addLocomotive(Locomotive locomotive);
     public Wagon createWagon ();
 }

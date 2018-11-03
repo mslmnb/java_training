@@ -1,5 +1,7 @@
 package com.epam.apartment.model;
 
+import static com.epam.apartment.Utilities.checkPositive;
+
 public class Door extends BaseEntity {
 
     public Door() {}
@@ -8,6 +10,8 @@ public class Door extends BaseEntity {
     private float Width;
 
     public Door(float height, float width) {
+        checkPositive(height, "Значение height должно быть положительно");
+        checkPositive(width, "Значение width должно быть положительно");
         this.height = height;
         Width = width;
     }
