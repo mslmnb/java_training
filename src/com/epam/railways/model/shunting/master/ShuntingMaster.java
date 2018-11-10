@@ -1,32 +1,28 @@
-package com.epam.railways.model;
+package com.epam.railways.model.shunting.master;
 
+import com.epam.railways.model.MakingUpOfTrainsPlan;
 import com.epam.railways.model.locomotive.Locomotive;
 import com.epam.railways.model.train.Train;
 import com.epam.railways.model.train.TrainType;
 import com.epam.railways.model.wagon.Wagon;
 
+import java.util.List;
+
 import static com.epam.railways.Utilities.checkNull;
 
-public class ShuntingMaster {
+public abstract class ShuntingMaster {
     private TrainType trainType;
     private Locomotive locomotive;
     private MakingUpOfTrainsPlan plan;
 
 
-    public ShuntingMaster() {
+    ShuntingMaster() {
     }
 
-    private ShuntingMaster(TrainType trainType, Locomotive locomotive, MakingUpOfTrainsPlan plan) {
+    ShuntingMaster(TrainType trainType, Locomotive locomotive, MakingUpOfTrainsPlan plan) {
         this.trainType = trainType;
         this.locomotive = locomotive;
         this.plan = plan;
-    }
-
-    public static ShuntingMaster getInstance(TrainType trainType, Locomotive locomotive, MakingUpOfTrainsPlan plan) {
-        checkNull(trainType, "Неопределен объект trainType");
-        checkNull(locomotive, "Неопределен объект locomotive");
-        checkNull(plan, "Неопределен объект plan.");
-        return new ShuntingMaster(trainType, locomotive, plan);
     }
 
     public TrainType getTrainType() {
@@ -58,7 +54,10 @@ public class ShuntingMaster {
                 throw new IllegalArgumentException("Превышение грузоподъемности поезда");
             }
         }
+        shake(train.getWagons());
         return train;
     }
+
+    abstract void shake(List<Wagon> wagons);
 
 }
