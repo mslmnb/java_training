@@ -9,7 +9,7 @@ import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Testing {
+public class RunHoroscopeProgram {
     public static void main(String[] args) {
         int year = 2014;
         int month = 1;

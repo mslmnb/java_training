@@ -2,7 +2,7 @@ package com.epam.encoder;
 
 import java.io.IOException;
 
-public class Testing {
+public class RunEncoderProgram {
     public static void main(String[] args) {
         FileEncryptor encryptor = new FileEncryptor("SECRET");
         try {

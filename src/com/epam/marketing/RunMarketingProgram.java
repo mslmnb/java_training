@@ -3,7 +3,7 @@ package com.epam.marketing;
 import java.util.Arrays;
 import java.util.List;
 
-public class Testing {
+public class RunMarketingProgram {
     public static int counter ;
     public static void main(String[] args) {
         ClientComponent parent = new ClientComposite(null, null);
