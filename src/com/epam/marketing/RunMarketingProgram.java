@@ -4,26 +4,27 @@ import java.util.Arrays;
 import java.util.List;
 
 public class RunMarketingProgram {
-    public static int counter ;
+    public static int counter;
+
     public static void main(String[] args) {
         ClientComponent parent = new ClientComposite(null, null);
-        List<ClientComponent> childs = Arrays.asList(createRandomClientComponent(parent),
-                                                         createRandomClientComponent(parent),
-                                                         createRandomClientComponent(parent));
+        List<ClientComponent> childs = Arrays.asList(createClientComponent(parent),
+                createClientComponent(parent),
+                createClientComponent(parent));
         parent.addOwnChilds(childs);
 
         ClientComponent lastChild = null;
-        for (ClientComponent currParent: parent.getOwnChilds()) {
-            childs = Arrays.asList(createRandomClientComponent(currParent),
-                    createRandomClientComponent(currParent),
-                    createRandomClientComponent(currParent));
+        for (ClientComponent currParent : parent.getOwnChilds()) {
+            childs = Arrays.asList(createClientComponent(currParent),
+                    createClientComponent(currParent),
+                    createClientComponent(currParent));
             currParent.addOwnChilds(childs);
 
-            for (ClientComponent currSubParent: currParent.getOwnChilds()) {
-                lastChild = createRandomClientComponent(currSubParent);
+            for (ClientComponent currSubParent : currParent.getOwnChilds()) {
+                lastChild = createClientComponent(currSubParent);
                 List<ClientComponent> subChilds = Arrays.asList(lastChild,
-                        createRandomClientComponent(currSubParent),
-                        createRandomClientComponent(currSubParent));
+                        createClientComponent(currSubParent),
+                        createClientComponent(currSubParent));
                 currSubParent.addOwnChilds(subChilds);
             }
         }
@@ -39,7 +40,7 @@ public class RunMarketingProgram {
         System.out.println(lastChild.getAllParents());
     }
 
-    public static ClientComponent createRandomClientComponent(ClientComponent parent) {
+    public static ClientComponent createClientComponent(ClientComponent parent) {
         return new ClientComposite(parent, new Client(++counter, "Client" + counter));
     }
 
